@@ -1,0 +1,45 @@
+
+.views-exposed-form .views-exposed-widget {
+  float: none;
+}
+
+/**
+ * Views Fluid Grid Style Settings
+ */
+li.views-fluid-grid-item {
+  border: none;
+  background-color: transparent;
+}
+
+/**
+ * Styling the Grouped title to be more obvious
+ */
+div.views-fluid-grid h3 {
+  border-bottom: 1px solid #d0d0d0;
+  font-weight: bolder;
+}
+
+/**
+ * View: UofS Projects (Main Project Listing for "Our Research" section)
+ */
+.view-uofs-projects .views-field-name {
+  margin-top: 60px;
+  border-bottom: 1px solid #d0d0d0;
+  font-weight: bold;
+}
+.view-uofs-projects .views-field-field-research-area {
+  float: right;
+  clear: right;
+}
+.view-uofs-projects .views-field-field-organism {
+  float: right;
+}
+
+/**
+ * View: UofS Publications
+ */
+.view-uofs-publications .views-field-title{
+  margin-top: 30px;
+  border-bottom: 1px solid #d0d0d0;
+  font-weight: bold;
+}

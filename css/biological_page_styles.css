@@ -1,0 +1,105 @@
+
+/**
+ * Research Area Pages
+ */
+.uofs-research-area-base .field-name-field-page-thumnail {
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.uofs-research-area-base .field-name-field-page-thumnail img {
+  margin: 0;
+}
+
+/**
+ * Research Area Teaser
+ */
+.field-name-field-page-thumnail .field-items {
+  display: inline-block;
+  padding-right: 30px;
+}
+.field-name-field-page-thumnail {
+  float: left;
+}
+
+.uofs-research-area-teaser-image {
+  padding-right: 30px;
+}
+
+.tripal-teaser-more {
+  float: right;
+}
+
+/**
+ * Organism Pages
+ */
+.organism-main-image {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+table#tripal_organism-table-base {
+  width: auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+table td.tripal-contents-table-td {
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+/**
+ * Organism Teaser
+ */
+div.tripal-teaser-title {
+  border-bottom: 1px solid #d0d0d0;
+  clear: both;
+}
+
+.field-name-field-organism ul.links.inline {
+  display: none;
+}
+
+/**
+ * Project Pages
+ */
+.project-date {
+  float: right;
+  font-weight: bold;
+}
+
+/**
+ * Student Information page
+ */
+ul.professors li {
+  list-style-type: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  min-height: 140px;
+}
+
+ul.professors li.professor-first {
+  padding-top: 30px;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+ul.professors li.professor-middle, ul.professors li.professor-last {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+ul.professors .professor-image {
+  float: left;
+  padding-right: 30px;
+  /*padding: 15px 30px 15px 0px;*/
+}
+
+ul.professors .professor-name {
+  font-weight: bold;
+/*  padding-top: 15px;*/
+}

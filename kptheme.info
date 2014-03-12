@@ -1,0 +1,36 @@
+
+name = KnowPulse Theme
+description = The KnowPulse-branded website theme (Bartik fluid subtheme)
+core = 7.x
+base theme = antonelli
+
+files[] = template.php
+
+stylesheets[all][] = css/colors.css
+stylesheets[all][] = css/kpstyle.css
+stylesheets[all][] = css/biological_page_styles.css
+stylesheets[all][] = css/views_styles.css
+
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[menu_first] = Menu first
+regions[menu_second] = Menu second
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
