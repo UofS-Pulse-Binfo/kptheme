@@ -1,6 +1,7 @@
 
 name = KnowPulse Theme
 description = The KnowPulse-branded website theme (Bartik fluid subtheme)
+version = 7.x-1.0b
 core = 7.x
 base theme = antonelli
 
