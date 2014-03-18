@@ -8,7 +8,7 @@ function kptheme_preprocess_views_view(&$variables) {
 
   // Wrap exposed filters in a fieldset.
   $default_display = $variables['view']->display['default'];
-  if ($variables['exposed'] AND ($default_display->display_options['exposed_form']['type'] == 'input_required')) {
+  if ($variables['exposed']) {
 
 
     // We want it collapsed by default only if there are search results
