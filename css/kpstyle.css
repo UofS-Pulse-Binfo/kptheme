@@ -123,7 +123,8 @@ table tr th {
   border: 1px solid #d0d0d0;
 }
 table tr td {
-  border: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+  border-left: 1px solid #d0d0d0;
 }
 
 table tr.odd {
