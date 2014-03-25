@@ -1,6 +1,16 @@
 
 .views-exposed-form .views-exposed-widget {
   float: none;
+  padding: 5px;
+}
+
+.views-exposed-widget .description {
+  margin: 0px 15px 0px 15px;
+  font-style: italic;
+}
+
+.views-exposed-widget .form-item {
+  margin: 0px 15px 0px 15px;
 }
 
 /**
@@ -18,6 +28,27 @@ div.views-fluid-grid h3 {
   border-bottom: 1px solid #d0d0d0;
   font-weight: bolder;
 }
+
+/**
+ * Stock (name/org) Exposed Widget
+ */
+.views-exposed-widget .form-item-germplasm-genotype-stock-name {
+  margin: 0;
+}
+.views-widget .organism-stock-element {
+  display: inline;
+}
+.organism-stock-element label {
+  display: inline;
+  margin-right: 5px;
+}
+.organism-stock-element .form-item {
+  display: inline;
+}
+.organism-stock-organism_id {
+  margin-left: 15px;
+}
+
 
 /**
  * View: UofS Projects (Main Project Listing for "Our Research" section)
@@ -46,4 +77,53 @@ div.views-fluid-grid h3 {
 .view-uofs-publications .pub-date {
   float: right;
   font-weight: bold;
+}
+
+/**
+ * View: Genotype Search
+ */
+.views-exposed-widget.views-widget-filter-add_germplasm_genotype {
+  border: 1px solid #d0d0d0;
+  background: #F6FFEC;
+}
+
+.views-exposed-widget.views-widget-filter-add_germplasm_genotype fieldset {
+  background: #F6FFEC;
+}
+
+.views-exposed-widget.views-widget-filter-add_germplasm_genotype legend {
+  background: #406b48;
+}
+
+td.genotype-AA, td.genotype-A {
+  background: #aab35b;
+  border-bottom: 1px solid #aab35b;
+}
+.views-germplasm-genotype #genotype.A {
+  color: #242714;
+}
+td.genotype-TT, td.genotype-T {
+  background: #406b48;
+  border-bottom: 1px solid #406b48;
+}
+.views-germplasm-genotype #genotype.T {
+  color: #172619;
+}
+td.genotype-GG, td.genotype-G {
+  background: #3d4b54;
+  border-bottom: 1px solid #3d4b54;
+}
+.views-germplasm-genotype #genotype.G {
+  color: #9AA6AE;
+}
+td.genotype-CC, td.genotype-C {
+  background: #7C9A99;
+  border-bottom: 1px solid #7C9A99;
+}
+.views-germplasm-genotype #genotype.C {
+  color: #1F2626;
+}
+.views-field.views-germplasm-genotype {
+  width: 100px;
+  text-align: center;
 }

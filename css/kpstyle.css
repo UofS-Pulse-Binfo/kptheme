@@ -126,6 +126,9 @@ table tr td {
   border-right: 1px solid #d0d0d0;
   border-left: 1px solid #d0d0d0;
 }
+table tr.views-row-last td {
+  border-bottom: 1px solid #d0d0d0;
+}
 
 table tr.odd {
   background: #FFFFFF;
@@ -141,6 +144,11 @@ fieldset legend {
   background-color: #314355;
 }
 fieldset legend a.fieldset-title {
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+fieldset legend .fieldset-legend {
   color: #FFFFFF;
   text-shadow: none;
 }
