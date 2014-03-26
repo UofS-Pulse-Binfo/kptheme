@@ -6,9 +6,16 @@
  */
 function kptheme_preprocess_views_view(&$variables) {
 
+  // No fieldset for the following views
+  $skip_views = array('kp_genotype_search');
+  $skip_view = FALSE;
+  if (in_array($variables['view']->name, $skip_views)) {
+    $skip_view = TRUE;
+  }
+
   // Wrap exposed filters in a fieldset.
   $default_display = $variables['view']->display['default'];
-  if ($variables['exposed']) {
+  if ($variables['exposed'] AND !($skip_view)) {
 
 
     // We want it collapsed by default only if there are search results
@@ -34,4 +41,5 @@ function kptheme_preprocess_views_view(&$variables) {
       // Reassign exposed filter tpl var to fieldset value
       $variables['exposed'] = theme('fieldset', $fieldset);
   }
+
 }

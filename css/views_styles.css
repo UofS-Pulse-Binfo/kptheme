@@ -32,6 +32,12 @@ div.views-fluid-grid h3 {
 /**
  * Stock (name/org) Exposed Widget
  */
+.views-exposed-widget .form-item-add-germplasm-genotype-add-stock {
+  margin: 0;
+}
+.views-exposed-widget .form-item-add-germplasm-genotype-add-stock-stock-name{
+  margin: 0;
+}
 .views-exposed-widget .form-item-germplasm-genotype-stock-name {
   margin: 0;
 }
@@ -49,7 +55,12 @@ div.views-fluid-grid h3 {
   margin-left: 15px;
 }
 
-
+/**
+ * Polymorphic exposed widget
+ */
+.views-exposed-widget .form-type-pairwise-compare-germplasm .form-item {
+  display: inline;
+}
 /**
  * View: UofS Projects (Main Project Listing for "Our Research" section)
  */
@@ -93,6 +104,11 @@ div.views-fluid-grid h3 {
 
 .views-exposed-widget.views-widget-filter-add_germplasm_genotype legend {
   background: #406b48;
+}
+
+.views-exposed-form .views-widget-filter-polymorphic_germplasm.polymorphic-disabled {
+  color: #d0d0d0;
+  font-style: italic;
 }
 
 td.genotype-AA, td.genotype-A {
