@@ -130,6 +130,19 @@ table tr.views-row-last td {
   border-bottom: 1px solid #d0d0d0;
 }
 
+.tripal-data-block table tr.first td {
+  border-top: 1px solid #d0d0d0;
+}
+.tripal-data-block table tr:first-child td {
+  border-top: 1px solid #d0d0d0;
+}
+.tripal-data-block table tr.last td {
+  border-bottom: 1px solid #d0d0d0;
+}
+.tripal-data-block table tr:last-child td {
+  border-bottom: 1px solid #d0d0d0;
+}
+
 table tr.odd {
   background: #FFFFFF;
 }
