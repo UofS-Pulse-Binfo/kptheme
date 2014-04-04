@@ -1,3 +1,6 @@
+.tripal-contents {
+  border-top: 1px solid #d0d0d0;
+}
 
 /**
  * Feature Pages
@@ -23,7 +26,7 @@ table#tripal_feature-variant_genotypes tr td.layout.genotypes-pie {
   height: 154px;
   overflow: hidden;
   position: absolute;
-  top: 90px;
+  top: 70px;
   right: 13px;
   z-index: 4;
 }
