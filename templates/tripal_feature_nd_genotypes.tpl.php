@@ -78,7 +78,7 @@ if ($feature->type_id->name == 'marker') {
     }
 
   // Add in my pie chart :)
-  $view = views_get_view('feature_genotype_pie_chart');
+  $view = views_get_view('kp_defaultviews_feature_genotype_piechart');
   $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $feature->feature_id;
   print $view->preview('marker_block');
   ?>

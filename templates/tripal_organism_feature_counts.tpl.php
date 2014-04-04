@@ -10,7 +10,7 @@ if(property_exists($organism, 'feature_counts')) {
 }
 
 // Get Distribution Pie Chart :)
-$view = views_get_view('organism_feature_distribution');
+$view = views_get_view('kppages_organism_feature_types_chart_pie');
 $view->display['default']->display_options['filters']['organism_id']['value']['value'] = $node->organism->organism_id;
 $views_output = $view->preview('block');
 

@@ -12,7 +12,7 @@ if(property_exists($organism, 'stock_counts')) {
 }
 
 // Get Distribution Pie Chart :)
-$view = views_get_view('organism_stock_distribution');
+$view = views_get_view('kppages_organism_stock_types_chart_pie');
 $view->display['default']->display_options['filters']['organism_id']['value']['value'] = $organism->organism_id;
 $views_output = $view->preview('block');
 
