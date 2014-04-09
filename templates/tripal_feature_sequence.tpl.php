@@ -44,14 +44,18 @@ $variant_types = array('SNP', 'MNP','indel');
 if ($feature->type_id->name == 'marker') {
   $type = 'marker';
 
-  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => TRUE)));
+  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE))));
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
-
+dpm($parent_feature, 'parent_feature');
   $fasta_header = '>' . $parent_feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
-  $fasta_description = '';
-  $marked_description = '';
+  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name . ' <strong>without any variants, including the current one, taken into account</strong>.';
+  $marked_description = 'The following sequence is that of the parent '
+    . $parent_feature->type_id->name . ' <strong>modified to highlight all of the known variants</strong>.
+    The main variant is displayed using the [allele1/allele2] notation and any other
+    variants are represented via their IUPAC code. The resulting FASTA is in the <strong>
+    format required by most marker development programs including tht for KASP assays</strong>.';
 
   $info['sequence'] = $parent_feature->residues;
 }
@@ -64,8 +68,12 @@ elseif (in_array($feature->type_id->name, $variant_types)) {
   $info['srcfeature_id'] = $parent_feature->feature_id;
 
   $fasta_header = '>' . $parent_feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
-  $fasta_description = '';
-  $marked_description = '';
+  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name . ' <strong>without any variants, including the current one, taken into account</strong>.';
+  $marked_description = 'The following sequence is that of the parent '
+    . $parent_feature->type_id->name . ' modified to highlight all of the known variants.
+    The main variant is displayed using the [allele1/allele2] notation and any other
+    variants are represented via their IUPAC code. The resulting FASTA is in the format
+    required by most marker development programs including tht for KASP assays.';
 
   $info['sequence'] = $parent_feature->residues;
 }
@@ -87,11 +95,13 @@ if ($info['sequence']) { ?>
     <h3>Variant Marked-up Sequence</h3>
     <?php print '<p>' . $marked_description . '</p>'; ?>
 
+    <div id="tripal_feature-fasta-record">
     <div id="tripal_feature-sequence-header"><?php print $fasta_header; ?></div>
     <pre id="tripal_feature-sequence-residues" class="variant-marked-up-sequence"><?php
       // format the sequence to break every 100 residues
       print $markedup_sequence; ?>
-    </pre> <?php
+    </pre>
+    </div> <?php
   }
 
   // FASTA Record
@@ -99,9 +109,12 @@ if ($info['sequence']) { ?>
     <br />
     <h3>FASTA Record</h3>
     <?php print '<p>' . $fasta_description . '</p>'; ?>
+
+    <div id="tripal_feature-fasta-record">
     <div id="tripal_feature-sequence-header"><?php print $fasta_header; ?></div>
     <pre id="tripal_feature-sequence-residues"><?php
       // format the sequence to break every 100 residues
       print $info['sequence']; ?>
-    </pre> <?php
+    </pre>
+    </div><?php
 }

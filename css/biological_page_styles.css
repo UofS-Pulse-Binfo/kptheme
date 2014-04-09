@@ -117,24 +117,34 @@ table#tripal_feature-variant_genotypes tr td.layout.genotypes-pie {
 /**
  * Feature Pages Sequence
  */
+#tripal_feature-fasta-record {
+  background-color: #EEEEEE;
+}
 #tripal_feature-sequence-header {
   font-family: monospace;
   font-size: medium;
+  padding-left: 15px;
+  padding-top: 15px;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 #tripal_feature-sequence-residues {
   width: 400px;
   word-wrap: break-word;
+  margin: 0;
+  letter-spacing:2px;
+  padding-top: 0;
   margin-top: 0;
+  background-color: transparent;
 }
 
 .variant-marked-up-sequence .variant {
   font-weight: bold;
+  font-size: 1.25em;
 }
 
 .variant-marked-up-sequence .variant-IUPAC a {
-  vertical-align: 3px;
+  color: #1BD004;
 }
 
 .variant-marked-up-sequence .variant-expanded a {

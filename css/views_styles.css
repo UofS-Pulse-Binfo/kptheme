@@ -85,7 +85,7 @@ div.views-fluid-grid h3 {
   border-bottom: 1px solid #d0d0d0;
   font-weight: bold;
 }
-.view-uofs-publications .pub-date {
+.view-uofs-publications .views-field-pyear {
   float: right;
   font-weight: bold;
 }

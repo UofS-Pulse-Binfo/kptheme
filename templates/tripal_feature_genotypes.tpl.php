@@ -79,8 +79,10 @@ if ($feature->type_id->name == 'marker') {
 
   // Add in my pie chart :)
   $view = views_get_view('feature_genotype_pie_chart');
-  $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $feature->feature_id;
-  print $view->preview('marker_block');
+  if (!empty($view)) {
+    $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $feature->feature_id;
+    print $view->preview('marker_block');
+  }
   ?>
 
   <div class="tripal_feature-data-block-desc tripal-data-block-desc">The following <?php print number_format($total_records) ?> genotype(s) have been recorded for this feature.</div><?php
@@ -184,8 +186,10 @@ if (in_array($feature->type_id->name, array('SNP'))) {
       <?php
         // The Genotype Pie Chart cell
         $view = views_get_view('feature_genotype_pie_chart');
-        $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $marker_feature_id;
-        print $view->preview('marker_block');
+        if (!empty($view)) {
+          $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $marker_feature_id;
+          print $view->preview('marker_block');
+        }
       ?>
       </td>
     </tr>
