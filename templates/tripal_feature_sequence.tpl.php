@@ -48,7 +48,7 @@ if ($feature->type_id->name == 'marker') {
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
-dpm($parent_feature, 'parent_feature');
+
   $fasta_header = '>' . $parent_feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
   $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name . ' <strong>without any variants, including the current one, taken into account</strong>.';
   $marked_description = 'The following sequence is that of the parent '
@@ -62,7 +62,7 @@ dpm($parent_feature, 'parent_feature');
 elseif (in_array($feature->type_id->name, $variant_types)) {
   $type = 'variant';
 
-  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => TRUE)));
+  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE))));
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;

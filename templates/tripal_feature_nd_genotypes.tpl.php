@@ -147,11 +147,13 @@ if (in_array($feature->type_id->name, array('SNP'))) {
 
         $rows = array();
 
-        foreach ($marker_genotypes->feature_genotype->feature_id as $k => $genotype) {
-          $rows[] = array(
-            $genotype->genotype_id->type_id->name,
-            $genotype->genotype_id->description
-          );
+        if (!empty($marker_genotypes->feature_genotype->feature_id)) {
+          foreach ($marker_genotypes->feature_genotype->feature_id as $k => $genotype) {
+            $rows[] = array(
+              $genotype->genotype_id->type_id->name,
+              $genotype->genotype_id->description
+            );
+          }
         }
 ?>
     <tr>
@@ -160,26 +162,30 @@ if (in_array($feature->type_id->name, array('SNP'))) {
         // The table and marker description cell
         print '<h3>'.$marker_name.'</h3>';
 
-        // the $table array contains the headers and rows array as well as other
-        // options for controlling the display of the table.  Additional
-        // documentation can be found here:
-        // https://api.drupal.org/api/drupal/includes%21theme.inc/function/theme_table/7
-        $table = array(
-          'header' => $headers,
-          'rows' => $rows,
-          'attributes' => array(
-            'id' => 'tripal_genetic-table-genotypes',
-          ),
-          'sticky' => FALSE,
-          'caption' => '',
-          'colgroups' => array(),
-          'empty' => '',
-        );
+        if (!empty($rows)) {
+          // the $table array contains the headers and rows array as well as other
+          // options for controlling the display of the table.  Additional
+          // documentation can be found here:
+          // https://api.drupal.org/api/drupal/includes%21theme.inc/function/theme_table/7
+          $table = array(
+            'header' => $headers,
+            'rows' => $rows,
+            'attributes' => array(
+              'id' => 'tripal_genetic-table-genotypes',
+            ),
+            'sticky' => FALSE,
+            'caption' => '',
+            'colgroups' => array(),
+            'empty' => '',
+          );
 
-        // once we have our table array structure defined, we call Drupal's theme_table()
-        // function to generate the table.
-        print theme_table($table);
-
+          // once we have our table array structure defined, we call Drupal's theme_table()
+          // function to generate the table.
+          print theme_table($table);
+        }
+        else {
+          print '<p id="genotypes" class="no-alleles">No allele calls have been made available for this marker.</p>';
+        }
       ?>
       </td>
       <td class="layout genotypes-pie">

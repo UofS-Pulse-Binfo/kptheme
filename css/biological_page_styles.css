@@ -17,6 +17,10 @@ table#tripal_feature-variant_genotypes tr td.layout.genotypes-pie {
   margin-right: 25px;
   margin-left: 50px;
 }
+p#genotypes.no-alleles {
+  font-style: italic;
+  color: #7D7D7D;
+}
 
 /**
  * Feature Pages: Ribbons

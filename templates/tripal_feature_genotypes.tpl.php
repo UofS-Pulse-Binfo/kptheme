@@ -147,11 +147,13 @@ if (in_array($feature->type_id->name, array('SNP'))) {
 
         $rows = array();
 
-        foreach ($marker_genotypes->feature_genotype->feature_id as $k => $genotype) {
-          $rows[] = array(
-            $genotype->genotype_id->type_id->name,
-            $genotype->genotype_id->description
-          );
+        if (!empty($marker_genotypes->feature_genotype->feature_id)) {
+          foreach ($marker_genotypes->feature_genotype->feature_id as $k => $genotype) {
+            $rows[] = array(
+              $genotype->genotype_id->type_id->name,
+              $genotype->genotype_id->description
+            );
+          }
         }
 ?>
     <tr>
