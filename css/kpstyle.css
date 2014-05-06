@@ -33,6 +33,22 @@ body {
 }
 
 /**
+ * Highlighted Content
+ */
+.region-highlighted .block {
+  border: 1px solid #d0d0d0;
+  padding: 15px 20px;
+}
+
+h3.highlighted-title {
+  font-weight: bold;
+}
+p.highlighted-body {
+  color: #60676E;
+  font-size: 0.8em;
+}
+
+/**
  * Top Menu's
  */
 div.menu-main h2 {
