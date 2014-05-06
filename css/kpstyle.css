@@ -37,7 +37,8 @@ body {
  */
 .region-highlighted .block {
   border: 1px solid #d0d0d0;
-  padding: 15px 20px;
+  padding: 15px 15px;
+  margin: 10px 0px;
 }
 
 h3.highlighted-title {
