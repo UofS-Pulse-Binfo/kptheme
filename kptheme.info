@@ -9,6 +9,7 @@ files[] = template.php
 
 stylesheets[all][] = css/colors.css
 stylesheets[all][] = css/kpstyle.css
+stylesheets[all][] = css/corner_ribbons.css
 stylesheets[all][] = css/biological_page_styles.css
 stylesheets[all][] = css/views_styles.css
 

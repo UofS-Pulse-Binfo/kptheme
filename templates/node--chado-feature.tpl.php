@@ -55,7 +55,11 @@ else {
   </script>
 
   <div id="tripal_<?php print $node_type?>_contents" class="tripal-contents">
-    <div class="ribbon-wrapper"><div class="ribbon ribbon-<?php print $feature_type_class;?>"><?php print ucfirst($feature_type); ?></div></div>
+    <div class="ribbon ribbon-<?php print $feature_type_class;?>">
+	  <div class="banner">
+	    <div class="text"><?php print ucfirst($feature_type); ?></div>
+	  </div>
+	</div>
     <table id ="tripal-<?php print $node_type?>-contents-table" class="tripal-contents-table">
       <tr class="tripal-contents-table-tr">
         <td nowrap class="tripal-contents-table-td tripal-contents-table-td-toc"  align="left"><?php

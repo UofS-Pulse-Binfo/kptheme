@@ -25,55 +25,29 @@ p#genotypes.no-alleles {
 /**
  * Feature Pages: Ribbons
  */
-.ribbon-wrapper {
-  width: 149px;
-  height: 154px;
-  overflow: hidden;
-  position: absolute;
-  top: 70px;
-  right: 13px;
-  z-index: 4;
-}
-
-.ribbon {
-  z-index: 5;
-  font: bold 15px Sans-Serif;
-  color: #333;
-  text-align: center;
-  -webkit-transform: rotate(45deg);
-  -moz-transform:    rotate(45deg);
-  -ms-transform:     rotate(45deg);
-  -o-transform:      rotate(45deg);
+.tripal-contents {
   position: relative;
-  padding: 7px 0;
-  left: -5px;
-  top: 45px;
-  width: 193px;
-  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
-  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
 }
 
-.ribbon:before, .ribbon:after {
-  content: "";
-  border-top:   3px solid #6e8900;
-  border-left:  3px solid transparent;
-  border-right: 3px solid transparent;
-  position:absolute;
-  bottom: -3px;
+/* Generic Feature */
+.ribbon-generic .banner {
+  /* Ribbon Font Color */
+  color: #56554C;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
 }
-
-.ribbon:before {
-  left: 0;
+.ribbon-generic .banner::after,
+.ribbon-generic .banner::before {
+  /* Ribbon Curled-edge Color */
+  background-color: #787878;
 }
-.ribbon:after {
-  right: 0;
-}
-
-.ribbon-generic {
+.ribbon-generic .text::before,
+.ribbon-generic .text::after,
+.no-css-transforms .ribbon-generic .text {
+  /* Ribbon Font Color */
   color: #56554C;
   text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
 
+  /* Ribbon Body Color */
   background-color: #B3B3B3;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#B3B3B3), to(#CCCCCC));
   background-image: -webkit-linear-gradient(top, #B3B3B3, #CCCCCC);
@@ -82,10 +56,25 @@ p#genotypes.no-alleles {
   background-image:      -o-linear-gradient(top, #B3B3B3, #CCCCCC);
 }
 
-.ribbon-sequence {
+/* Sequence Feature */
+.ribbon-sequence .banner {
+  /* Ribbon Font Color */
+  color: #DADAD0;
+  text-shadow: rgba(0,0,0,0.5) 0px 1px 0px;
+}
+.ribbon-sequence .banner::after,
+.ribbon-sequence .banner::before {
+  /* Ribbon Curled-edge Color */
+  background-color: #3C4A49;
+}
+.ribbon-sequence .text::before,
+.ribbon-sequence .text::after,
+.no-css-transforms .ribbon-sequence .text {
+  /* Ribbon Font Color */
   color: #DADAD0;
   text-shadow: rgba(0,0,0,0.5) 0px 1px 0px;
 
+  /* Ribbon Body Color */
   background-color: #7C9A99;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#7C9A99), to(#597372));
   background-image: -webkit-linear-gradient(top, #7C9A99, #597372);
@@ -94,10 +83,25 @@ p#genotypes.no-alleles {
   background-image:      -o-linear-gradient(top, #7C9A99, #597372);
 }
 
-.ribbon-variant {
+/* Variant Feature */
+.ribbon-variant .banner {
+  /* Ribbon Font Color */
+  color: #56554C; 
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+}
+.ribbon-variant .banner::after,
+.ribbon-variant .banner::before {
+  /* Ribbon Curled-edge Color */
+  background-color: #749C38;
+}
+.ribbon-variant .text::before,
+.ribbon-variant .text::after,
+.no-css-transforms .ribbon-variant .text {
+  /* Ribbon Font Color */
   color: #56554C;
   text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
 
+  /* Ribbon Body Color */
   background-color: #BFDC7A;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
   background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
@@ -106,10 +110,25 @@ p#genotypes.no-alleles {
   background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
 }
 
-.ribbon-marker {
+/* Marker Feature */
+.ribbon-marker .banner {
+  /* Ribbon Font Color */
+  color: #DADAD0;
+  text-shadow: rgba(0,0,0,0.5) 0px 1px 0px;
+}
+.ribbon-marker .banner::after,
+.ribbon-marker .banner::before {
+  /* Ribbon Curled-edge Color */
+  background-color: #001123;
+}
+.ribbon-marker .text::before,
+.ribbon-marker .text::after,
+.no-css-transforms .ribbon-marker .text {
+  /* Ribbon Font Color */
   color: #DADAD0;
   text-shadow: rgba(0,0,0,0.5) 0px 1px 0px;
 
+  /* Ribbon Body Color */
   background-color: #004080;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#004080), to(#011F46));
   background-image: -webkit-linear-gradient(top, #004080, #011F46);
