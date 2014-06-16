@@ -67,7 +67,7 @@ $num_germplasm_genotype_fields = sizeof($view->germplasm_genotype_specs);
         $id = 'filter-polymorphic_germplasm';
 
         $poly_class = 'polymorphic-disabled';
-        if ($num_germplasm_genotype_fields > 2) {
+        if ($num_germplasm_genotype_fields >= 2) {
           $poly_class = 'polymorphic-enabled';
         }
       ?>
