@@ -97,9 +97,7 @@ $num_germplasm_genotype_fields = sizeof($view->germplasm_genotype_specs);
     drupal_add_js('misc/form.js');
     drupal_add_js('misc/collapse.js');
     $fieldset_classes = array('collapsible');
-    if ($num_germplasm_genotype_fields > 0) {
-      $fieldset_classes[] = 'collapsed';
-    }
+    $fieldset_classes[] = 'collapsed';
 ?>
 <fieldset class="<?php print implode(' ',$fieldset_classes);?> form-wrapper"><legend><span class="fieldset-legend">Search Criteria</span></legend><div class="fieldset-wrapper">
     <?php foreach ($widgets as $id => $widget): ?>
