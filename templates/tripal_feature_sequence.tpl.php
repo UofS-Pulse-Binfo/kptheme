@@ -55,7 +55,7 @@ if ($feature->type_id->name == 'marker') {
     . $parent_feature->type_id->name . ' <strong>modified to highlight all of the known variants</strong>.
     The main variant is displayed using the [allele1/allele2] notation and any other
     variants are represented via their IUPAC code. The resulting FASTA is in the <strong>
-    format required by most marker development programs including tht for KASP assays</strong>.';
+    format required by most marker development programs including that for KASP assays</strong>.';
 
   $info['sequence'] = $parent_feature->residues;
 }
@@ -73,7 +73,7 @@ elseif (in_array($feature->type_id->name, $variant_types)) {
     . $parent_feature->type_id->name . ' modified to highlight all of the known variants.
     The main variant is displayed using the [allele1/allele2] notation and any other
     variants are represented via their IUPAC code. The resulting FASTA is in the format
-    required by most marker development programs including tht for KASP assays.';
+    required by most marker development programs including that for KASP assays.';
 
   $info['sequence'] = $parent_feature->residues;
 }

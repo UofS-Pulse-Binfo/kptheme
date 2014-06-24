@@ -22,6 +22,18 @@ p#genotypes.no-alleles {
   color: #7D7D7D;
 }
 
+.tripal_feature-obsolete {
+  color: #8c2e0b;
+  border: 1px solid #ed541d;
+  background-color: #fef5f1;
+  padding: 10px 25px;
+  font-size: 1.2em;
+  font-style: italic;
+}
+.tripal_feature-obsolete .title {
+  font-weight: bold;
+}
+
 /**
  * Feature Pages: Ribbons
  */
@@ -86,7 +98,7 @@ p#genotypes.no-alleles {
 /* Variant Feature */
 .ribbon-variant .banner {
   /* Ribbon Font Color */
-  color: #56554C; 
+  color: #56554C;
   text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
 }
 .ribbon-variant .banner::after,

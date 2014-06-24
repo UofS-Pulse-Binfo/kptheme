@@ -1,5 +1,6 @@
 <?php
 $feature  = $variables['node']->feature;
+$feature = chado_expand_var($feature, 'table', 'featureprop',array('return_array' => TRUE));
 
 ///////////////////////////////////////
 // Markers
@@ -10,7 +11,6 @@ if ($feature->type_id->name == 'marker') {
   $is_marker = TRUE;
 
   // Get the marker type
-  $feature = chado_expand_var($feature, 'table', 'featureprop',array('return_array' => TRUE));
   foreach ($feature->featureprop as $k => $prop) {
     if ($prop->type_id->name == 'marker_type') {
       $subtype = $prop->value;
@@ -20,9 +20,11 @@ if ($feature->type_id->name == 'marker') {
 
   // get the source variation (ie: using feature_relationship get the feature this is_marker_of)
   $feature = chado_expand_var($feature, 'table', 'feature_relationship',array('return_array' => TRUE));
-  foreach ($feature->feature_relationship->subject_id as $rel) {
-    if ($rel->type_id->name == 'is_marker_of') {
-      $variant_feature = chado_generate_var('feature', array('feature_id' => $rel->object_id->feature_id));
+  if (isset($feature->feature_relationship) AND $feature->feature_relationship->subject_id != NULL) {
+    foreach ($feature->feature_relationship->subject_id as $rel) {
+      if ($rel->type_id->name == 'is_marker_of') {
+        $variant_feature = chado_generate_var('feature', array('feature_id' => $rel->object_id->feature_id));
+      }
     }
   }
 }
@@ -40,14 +42,16 @@ if (in_array($feature->type_id->name, $variant_types)) {
   // Get available markers  (ie: using feature_relationship get the features is_marker_of the current variant)
   $marker_features = array();
   $feature = chado_expand_var($feature, 'table', 'feature_relationship',array('return_array' => TRUE));
-  foreach ($feature->feature_relationship->object_id as $rel) {
-    if ($rel->type_id->name == 'is_marker_of') {
-      $marker = chado_generate_var('feature', array('feature_id' => $rel->subject_id->feature_id));
-      if (isset($marker->nid)) {
-        $marker_features[] = l($marker->name, 'node/'.$marker->nid);
-      }
-      else {
-        $marker_features[] = $marker->name;
+  if (isset($feature->feature_relationship) AND $feature->feature_relationship->object_id != NULL) {
+    foreach ($feature->feature_relationship->object_id as $rel) {
+      if ($rel->type_id->name == 'is_marker_of') {
+        $marker = chado_generate_var('feature', array('feature_id' => $rel->subject_id->feature_id));
+        if (isset($marker->nid)) {
+          $marker_features[] = l($marker->name, 'node/'.$marker->nid);
+        }
+        else {
+          $marker_features[] = $marker->name;
+        }
       }
     }
   }
@@ -56,6 +60,22 @@ if (in_array($feature->type_id->name, $variant_types)) {
 ?>
 
 <div class="tripal_feature-data-block-desc tripal-data-block-desc"></div> <?php
+
+// Is Obsolete Row
+if($feature->is_obsolete == TRUE){
+  print '<div class="tripal_feature-obsolete"><span class="title">OBSOLETE</span>';
+
+  // Add a description/message if one is available
+  $result = chado_select_record('featureprop',array('value'), array('type_id' => array('name' => 'obsolete_message'), 'feature_id' => $feature->feature_id));
+  if (is_array($result)) {
+    print ': ';
+    foreach ($result as $prop) {
+      print '<span class="message">'.$prop->value.'</span>';
+    }
+  }
+
+  print '</div>';
+}
 
 // the $headers array is an array of fields to use as the colum headers.
 // additional documentation can be found here
@@ -137,7 +157,7 @@ $rows[] = array(
   $organism
 );
 // Seqlen row
-if($feature->seqlen > 0) {
+if($feature->seqlen > 1) {
   $rows[] = array(
     array(
       'data' => 'Sequence length',
@@ -171,15 +191,7 @@ if (user_access('administer tripal')) {
     ),
   );
 }
-// Is Obsolete Row
-if($feature->is_obsolete == TRUE){
-  $rows[] = array(
-    array(
-      'data' => '<div class="tripal_feature-obsolete">This feature is obsolete</div>',
-      'colspan' => 2
-    ),
-  );
-}
+
 
 // the $table array contains the headers and rows array as well as other
 // options for controlling the display of the table.  Additional
