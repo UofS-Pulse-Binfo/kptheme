@@ -141,7 +141,7 @@ if (in_array($feature->type_id->name, array('SNP'))) {
         }
 
         $marker_genotypes = chado_generate_var('feature',array('feature_id' => $marker->record->subject_id->feature_id));
-        $marker_genotypes = chado_expand_var($marker_genotypes, 'table', 'feature_genotype');
+        $marker_genotypes = chado_expand_var($marker_genotypes, 'table', 'feature_genotype', array('return_array' => TRUE));
 
         $num_genotypes = sizeof($marker_genotypes->feature_genotype->feature_id);
 
