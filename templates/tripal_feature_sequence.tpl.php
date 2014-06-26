@@ -40,17 +40,23 @@ $feature = $variables['node']->feature;
 
 $type = 'other';
 $info = array();
+$info['sequence'] = NULL; // Needed for the check later
 $variant_types = array('SNP', 'MNP','indel');
 if ($feature->type_id->name == 'marker') {
   $type = 'marker';
 
-  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE))));
+  $feature_loc = chado_generate_var(
+    'featureloc',
+    array('feature_id' => $feature->feature_id),
+    array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE)))
+  );
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
 
-  $fasta_header = '>' . $parent_feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
-  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name . ' <strong>without any variants, including the current one, taken into account</strong>.';
+  $sequence_feature_name = $parent_feature->name;
+  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name
+    . ' <strong>without any variants, including the current one, taken into account</strong>.';
   $marked_description = 'The following sequence is that of the parent '
     . $parent_feature->type_id->name . ' <strong>modified to highlight all of the known variants</strong>.
     The main variant is displayed using the [allele1/allele2] notation and any other
@@ -62,13 +68,18 @@ if ($feature->type_id->name == 'marker') {
 elseif (in_array($feature->type_id->name, $variant_types)) {
   $type = 'variant';
 
-  $feature_loc = chado_generate_var('featureloc',array('feature_id' => $feature->feature_id), array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE))));
+  $feature_loc = chado_generate_var(
+    'featureloc',
+    array('feature_id' => $feature->feature_id),
+    array('include_fk' => array('srcfeature_id' => array('type_id' => TRUE)))
+  );
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
 
-  $fasta_header = '>' . $parent_feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
-  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name . ' <strong>without any variants, including the current one, taken into account</strong>.';
+  $sequence_feature_name = $parent_feature->name;
+  $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name
+    . ' <strong>without any variants, including the current one, taken into account</strong>.';
   $marked_description = 'The following sequence is that of the parent '
     . $parent_feature->type_id->name . ' modified to highlight all of the known variants.
     The main variant is displayed using the [allele1/allele2] notation and any other
@@ -80,8 +91,9 @@ elseif (in_array($feature->type_id->name, $variant_types)) {
 elseif (!empty($residues)) {
   $type = 'sequence';
 
-  $fasta_header = '>' . $feature->name . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
-  $fasta_description = 'The following sequence is that of the ' . $feature->type_id->name . ' <strong>without any variants taken into account</strong>.';
+  $sequence_feature_name = $feature->name;
+  $fasta_description = 'The following sequence is that of the ' . $feature->type_id->name
+    . ' <strong>without any variants taken into account</strong>.';
   $marked_description = '';
 
   $info['sequence'] = $feature->residues;
@@ -90,15 +102,22 @@ if ($info['sequence']) { ?>
   <div class="tripal_feature-data-block-desc tripal-data-block-desc"></div> <?php
 
   // Marked-up record
-  $markedup_sequence = nd_genotypes_markup_variant_sequence($feature->feature_id, $type, $info);
-  if ($markedup_sequence) { ?>
+  $sequence_details = nd_genotypes_markup_variant_sequence($feature->feature_id, $type, $info);
+  $markedup_sequence = $sequence_details['marked_up_sequence'];
+
+  $fasta_header = '>' . $sequence_feature_name . ':' . $sequence_details['start'] . '-' . $sequence_details['end'] . ' (' . $feature->uniquename . ': ' . $feature->type_id->name . ')';
+
+  $has_variants = TRUE;
+  if ($markedup_sequence == $sequence_details['shortened_sequence']) {
+    $has_variants = FALSE;
+  }
+  if ($markedup_sequence AND $has_variants) { ?>
     <h3>Variant Marked-up Sequence</h3>
     <?php print '<p>' . $marked_description . '</p>'; ?>
 
     <div id="tripal_feature-fasta-record">
     <div id="tripal_feature-sequence-header"><?php print $fasta_header; ?></div>
     <pre id="tripal_feature-sequence-residues" class="variant-marked-up-sequence"><?php
-      // format the sequence to break every 100 residues
       print $markedup_sequence; ?>
     </pre>
     </div> <?php
@@ -113,8 +132,7 @@ if ($info['sequence']) { ?>
     <div id="tripal_feature-fasta-record">
     <div id="tripal_feature-sequence-header"><?php print $fasta_header; ?></div>
     <pre id="tripal_feature-sequence-residues"><?php
-      // format the sequence to break every 100 residues
-      print $info['sequence']; ?>
+      print $sequence_details['shortened_sequence']; ?>
     </pre>
     </div><?php
 }

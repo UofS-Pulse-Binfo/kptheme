@@ -78,7 +78,7 @@ if ($feature->type_id->name == 'marker') {
     }
 
   // Add in my pie chart :)
-  $view = views_get_view('kp_defaultviews_feature_genotype_piechart');
+  $view = views_get_view('kppages_feature_genotype_chart_pie');
   if (!empty($view)) {
     $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $feature->feature_id;
     print $view->preview('marker_block');
@@ -191,7 +191,7 @@ if (in_array($feature->type_id->name, array('SNP'))) {
       <td class="layout genotypes-pie">
       <?php
         // The Genotype Pie Chart cell
-        $view = views_get_view('feature_genotype_pie_chart');
+        $view = views_get_view('kppages_feature_genotype_chart_pie');
         if (!empty($view)) {
           $view->display['default']->display_options['filters']['feature_id']['value']['value'] = $marker_feature_id;
           print $view->preview('marker_block');
