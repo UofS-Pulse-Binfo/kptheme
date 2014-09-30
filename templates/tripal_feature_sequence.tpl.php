@@ -21,7 +21,6 @@
  */
 
 $feature = $variables['node']->feature;
-//dpm($feature, 'feature');
 
 // we don't want to get the sequence for traditionally large types. They are
 // too big,  bog down the web browser, take longer to load and it's not
@@ -53,6 +52,7 @@ if ($feature->type_id->name == 'marker') {
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
+  $info['feature_position'] = $feature_loc->fmin;
 
   $sequence_feature_name = $parent_feature->name;
   $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name
@@ -76,6 +76,7 @@ elseif (in_array($feature->type_id->name, $variant_types)) {
   $feature_loc = chado_expand_var($feature_loc,'field','feature.residues');
   $parent_feature = $feature_loc->srcfeature_id;
   $info['srcfeature_id'] = $parent_feature->feature_id;
+  $info['feature_position'] = $feature_loc->fmin;
 
   $sequence_feature_name = $parent_feature->name;
   $fasta_description = 'The following sequence is that of the parent ' . $parent_feature->type_id->name
@@ -97,6 +98,7 @@ elseif (!empty($residues)) {
   $marked_description = '';
 
   $info['sequence'] = $feature->residues;
+  $info['feature_position'] = 0;
 }
 if ($info['sequence']) { ?>
   <div class="tripal_feature-data-block-desc tripal-data-block-desc"></div> <?php
