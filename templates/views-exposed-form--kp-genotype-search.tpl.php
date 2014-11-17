@@ -22,7 +22,10 @@
  // We need to actually get the $view object to determine how many germplasm genotype
  // fields have been added
 $view = views_get_current_view();
-$num_germplasm_genotype_fields = sizeof($view->germplasm_genotype_specs);
+$num_germplasm_genotype_fields = 0;
+if (isset($view->exposed_raw_input['add_germplasm_genotype']['existing'])) {
+  $num_germplasm_genotype_fields = sizeof($view->exposed_raw_input['add_germplasm_genotype']['existing']);
+}
 ?>
 <?php if (!empty($q)): ?>
   <?php
