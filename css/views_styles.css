@@ -13,6 +13,39 @@
   margin: 0px 15px 0px 15px;
 }
 
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 0;
+}
+.views-exposed-form fieldset {
+  margin-bottom: 15px;
+}
+
+/**
+ * Styling feeds to be more friendly.
+ * Works in conjunction with views-view--page.tpl.php and
+ * kptheme_views_data_export_feed_icon() which change feeds to be rendered as
+ * a linked list.
+ */
+.views-feed {
+  margin-top: 30px;
+}
+ul.feed-icons {
+  display: inline;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.feed-icons li {
+  display: inline;
+}
+
+ul.feed-icons li:after {
+  content: ", ";
+}
+ul.feed-icons li:last-child:after {
+    content: "";
+}
+
 /**
  * Views Fluid Grid Style Settings
  */

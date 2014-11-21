@@ -43,3 +43,14 @@ function kptheme_preprocess_views_view(&$variables) {
   }
 
 }
+
+function kptheme_views_data_export_feed_icon($variables) {
+
+  $url_options = array('html' => TRUE, 'attributes' => array('class' => 'download-feed'));
+  if($variables['query']) {
+      $url_options['query'] = $variables['query'];
+  }
+
+  return '<li>' . l($variables['text'], $variables['url'], $url_options) . '</li>';
+
+}
