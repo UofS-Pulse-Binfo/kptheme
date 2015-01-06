@@ -3,6 +3,19 @@
 }
 
 /**
+ * JBrowse Instances
+ */
+div#JBrowseInstance{
+  border: 1px solid #d0d0d0;
+  width: 100%;
+  height: 700px;
+}
+
+div#JBrowseInstance iframe {
+  border: none;
+}
+
+/**
  * Feature Pages
  */
 table#tripal_feature-variant_genotypes tr td.layout {
