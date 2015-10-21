@@ -50,12 +50,11 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
-
-  <?php if ($feed_icon): ?>
-    <div class="views-feed">
+  <?php if ($view->result AND $feed_icon): ?>
+    <div class="views-feed"><strong>
       <span class="feed-msg">Download current dataset: </span>
       <ul class="feed-icons"><?php print $feed_icon; ?></ul>
-    </div>
+    </strong></div>
   <?php endif; ?>
 
   <?php if ($rows): ?>
