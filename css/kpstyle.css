@@ -15,7 +15,7 @@
           box-shadow: 0 4px 4px #000000;
 }
 
-#header img{
+#header img {
   border: none;
 }
 
@@ -115,6 +115,11 @@ div.menu-first .last a {
   background-image:none;
 }
 
+div.menu-first a:hover {
+  color: #FFFFFF;
+}
+
+
 div.menu-second {
   display:block;
   height:42px;
@@ -124,13 +129,26 @@ div.menu-second {
   clear: both;
 }
 
+div.menu-second {
+  display:block;
+  height:42px;
+  width:100%;
+  background: url('../images/subbg.png');
+  background-repeat: x;
+  clear: both;
+}
+
+
 div.menu-second ul {
   margin-left:15px;
 }
 
+/* original version of
+secondary navigation
+
 div.menu-second a {
   color: #474747;
-  font-size:13px;
+  font-size: 13px;
   font-family:Arial, Helvetica, sans-serif;
   line-height:38px;
   float: left;
@@ -141,16 +159,46 @@ div.menu-second a {
   height: 43px;
   background: url('../images/subdivider.png') no-repeat 100% 21px;
 }
+*/
 
+/* change secondary navigation size */
+div.menu-second a {
+  color: #474747;
+  font-size: 1.18em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px #FFFFFF;
+  line-height: 38px;
+  float: left;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 0px 20px 2px 15px;
+  display: block;
+  height: 43px;
+  background: url('../images/subdivider.png') no-repeat 100% 20px;
+}
+
+div.menu-second a:first-child {
+  padding-left: 0;
+  margin-left: 10px;
+}
 
 div.menu-second .last a {
   background-image:none;
 }
 
+div.menu-second  a:hover {
+  text-decoration: none;
+  color: #000000;
+  text-shadow: 1px 1px 10px #000000; 
+}
+
+/* original version
 div.menu-second  a:hover, a:active {
   color: #212C32;
   text-decoration: underline;
 }
+*/
 
 /**
  * Tables
@@ -219,3 +267,162 @@ img {
   border: 1px solid #d0d0d0;
   margin: 0;
 }
+
+/* bio informatics page
+and research page
+*/
+.copy-center-row img {
+  border: none;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+
+.copy-center-row {
+   border-bottom: 1px solid #EAEAEA;
+}
+
+.row-bottom {
+  margin-bottom: 20px;
+}
+
+/* fix logo alignment */
+#header .section, #header .clearfix {
+  clear: both;
+}
+
+
+/* make all boxes the same 
+heights in bioinformatics
+and research page 
+research flex style value */
+.copy-box-nav .pane-1 {
+  margin-left: 10px;
+}
+
+.copy-box-nav .pane-content{
+  border: 1px solid #D0D0D0;
+  padding: 5px 20px;
+  margin: 0 5px;
+  min-height: 225px;
+  max-height: 225px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-box-nav .pane-content p:first-child {
+  width: 90%;
+  line-height: 160%;
+  font-size: 97%;
+}
+
+.copy-box-nav h2 {
+  padding: 9% 0 3% 0;
+  margin: 0;
+}
+
+.copy-box-nav p a {
+  display: block;
+  margin: 25px 0 0 0;
+}
+
+/* crops font style */
+.tripal-contents-table {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.95em;
+}
+
+/* breeding and genetics and crops 
+overview page */
+
+div.field-items p {
+  text-align: justify;
+}
+
+.bast-tripal-data-block-title,
+.tripal-data-block-title {
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+}
+
+.organism-description {
+  text-align: justify;
+}
+
+/* sort icon in raw sequence search */
+.active img {
+  border: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+/* blast page */
+#edit-msg p {
+  text-align: justify;
+}
+
+/* footer */
+#footer-wrapper {
+  border-bottom: 15px solid #284453;
+  min-width: 1100px; 
+}
+
+#footer-wrapper .block {
+  margin: 0;
+  border: none;
+  padding: 0px;
+}
+
+#footer .block {
+  margin: 0;
+}
+
+#footer .content img {
+  margin: 0 10px 20px 10px;
+  border: none;
+}
+
+#footer .block .content {
+  padding: 0;
+  margin-top: 0;
+}
+
+#footer-columns p {
+  margin-top: 0; 
+}
+
+#footer {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+#footer .content strong {
+  font-size: 1.4em;
+}
+
+#footer .content span {
+  display: block;
+  color: #CCCCCC;
+}
+
+#footer .content p:last-child {
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+#footer .content p:first-child{
+  float: left;
+  width: 690px;
+  margin-left: 15px;
+}
+
+#footer .content img {
+    opacity: 0.7;
+    filter: alpha(opacity=70); /* For IE8 and earlier */
+}
+
+#footer .content img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+} 
