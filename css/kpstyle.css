@@ -391,6 +391,7 @@ div.field-items p {
 }
 
 #footer {
+  border: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #FFFFFF;
   font-weight: 300;
