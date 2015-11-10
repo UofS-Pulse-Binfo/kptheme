@@ -98,6 +98,15 @@
   <?php print render($title_suffix); ?>
 
   <div class="content clearfix"<?php print $content_attributes; ?>>
+    <div id="node-content">
+      <?php
+        // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content);
+      ?>
+    </div>
+
     <div id="JBrowseInstance">
       <iframe src="<?php print $url;?>" width="100%" height="100%">
       </iframe>
