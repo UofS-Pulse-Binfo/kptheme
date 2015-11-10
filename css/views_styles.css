@@ -97,27 +97,40 @@ div.views-fluid-grid h3 {
 /**
  * View: UofS Projects (Main Project Listing for "Our Research" section)
  */
+
+/* original version
 .view-uofs-projects .views-field-name {
   margin-top: 60px;
   border-bottom: 1px solid #d0d0d0;
   font-weight: bold;
 }
+
 .view-uofs-projects .views-field-field-research-area {
   float: right;
   clear: right;
 }
+
 .view-uofs-projects .views-field-field-organism {
   float: right;
 }
+*/
 
 /**
  * View: UofS Publications
  */
+
+/* original version
 .view-uofs-publications .views-field-title{
   margin-top: 30px;
   border-bottom: 1px solid #d0d0d0;
   font-weight: bold;
 }
+.view-uofs-publications .views-field-pyear {
+  float: right;
+  font-weight: bold;
+} 
+*/
+
 .view-uofs-publications .views-field-pyear {
   float: right;
   font-weight: bold;
@@ -175,4 +188,76 @@ td.genotype-CC, td.genotype-C {
 .views-field.views-germplasm-genotype {
   width: 100px;
   text-align: center;
+}
+
+/* css for contents (VIEWS) in:
+datasets, projects, publications
+and each crops/projects
+*/
+
+.views-row-odd, .views-row-even {
+  border-bottom: 1px solid #D0D0D0;
+  margin: 0 0 30px 0;
+  padding: 0 0 10px 0;  
+}
+
+.views-row-odd .views-field-value, .views-row-even .views-field-value {
+  text-align: justify;
+}
+
+div.views-field-name a, div.views-field-title a {
+  font-size: 1.3em;
+} 
+
+.views-field-name {
+  text-align: left;
+}
+
+.views-field-pyear, .date-display-range {
+  padding: 0 0 0 20px;
+  text-align: right;
+}
+ 
+div.views-field-name, div.views-field-title {
+  padding: 0 0 10px 0;
+  text-align: left;
+}
+
+.views-field, .views-field-field-page-thumbnail {
+  text-align: left;
+}
+
+/* wild species */
+
+ul.ui-accordion-content div {
+  padding: 0;
+  margin: 0;
+}
+
+ul.ui-accordion-content {
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.ui-accordion-content li {
+  margin: 0 auto;
+  padding: 10px 25px;
+  width: 225px;
+  float: left;
+  display: inline;
+}
+
+ul.ui-accordion-content li a {
+  color: #13B72D;
+}
+
+/* our reserach */
+.copy-box-navtext .pane-content {
+  border: 1px solid #D0D0D0;
+  padding: 10px 30px;
+  margin: 0 10px;
+}
+
+.copy-box-navtext .pane-1 {
+  margin-left: 10px;
 }

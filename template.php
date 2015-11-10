@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Implements hook_preprocess_views_view().
  * Add a collapsible fieldset around the views exposed filters
- */
+ */ 
 function kptheme_preprocess_views_view(&$variables) {
 
   // No fieldset for the following views
@@ -41,7 +40,21 @@ function kptheme_preprocess_views_view(&$variables) {
       // Reassign exposed filter tpl var to fieldset value
       $variables['exposed'] = theme('fieldset', $fieldset);
   }
-
+  
+  if ($variables['view']->name == 'uofs_wild_species') {
+		// These files are needed to get the accordion list to work.
+		// include requred css and js file
+		// markup: sites/all/themes/kptheme/views-views--uofs-wildspecies--page.tpl.php
+		// initilialize: sites/all/themes/kptheme/js 
+		if ($jquery_path = libraries_get_path('jquery_ui')) {
+			drupal_add_css($jquery_path . '/css/kptheme/jquery-ui-1.10.4.custom.css');
+			drupal_add_js($jquery_path . '/js/jquery-1.10.2.js');
+			drupal_add_js($jquery_path . '/js/jquery-ui-1.10.4.custom.js');
+			
+			$theme_path = $GLOBALS['base_url'] . '/'. drupal_get_path('theme', 'kptheme');
+			drupal_add_js($theme_path . '/js/WildSpeciesView_ResearchWildSpecies_JQueryAccordion.js');
+		}
+	}
 }
 
 function kptheme_views_data_export_feed_icon($variables) {
@@ -52,5 +65,6 @@ function kptheme_views_data_export_feed_icon($variables) {
   }
 
   return '<li>' . l($variables['text'], $variables['url'], $url_options) . '</li>';
-
 }
+
+

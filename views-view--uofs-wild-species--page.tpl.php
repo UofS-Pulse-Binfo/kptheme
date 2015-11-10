@@ -26,8 +26,8 @@
  *
  * @ingroup views_templates
  */
+ 
 ?>
-
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -51,17 +51,17 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
+  <?php if ($view->result AND $feed_icon): ?>
+    <div class="views-feed"><strong>
+      <span class="feed-msg">Download current dataset: </span>
+      <ul class="feed-icons"><?php print $feed_icon; ?></ul>
+    </strong></div>
+  <?php endif; ?>
 
-  <?php if ($rows):
-    // Check to see if there are multiple groups and if so make them accordions
-    if (preg_match_all('/views-group/',$rows, $matches)) {
-      if (sizeof($matches[0]) > 1) {
-      }
-    }
-  ?>
-    <div class="view-content">
+  <?php if ($rows): ?>         
+    <div id="uofs-wild-species-accordion" class="view-content">
       <?php print $rows; ?>
-    </div>
+    </div>    
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>
@@ -85,12 +85,6 @@
   <?php if ($footer): ?>
     <div class="view-footer">
       <?php print $footer; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php if ($feed_icon): ?>
-    <div class="feed-icon">
-      <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
 
