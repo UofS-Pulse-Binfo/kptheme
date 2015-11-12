@@ -414,7 +414,7 @@ div.field-items p {
 
 #footer .content p:first-child{
   float: left;
-  width: 690px;
+  width: 660px;
   margin-left: 15px;
 }
 
@@ -427,3 +427,41 @@ div.field-items p {
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 } 
+
+/* fields in table */
+table {
+  font-family: inherit;
+}
+
+/* related species */
+ 
+div.tripal_organism-teaser, 
+div.tripal-teaser {
+  border: 1px solid #D0D0D0;
+  padding: 30px 40px 20px 20px;
+  margin: 0 0 30px 0;
+  background-color: #FAFAFA;
+}
+
+.col-left-img {
+  float: left;
+  width: 220px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.col-right-copy {
+  float: none;
+  width: auto;
+  padding-left: 250px;
+}
+
+.col-clear {
+  clear: both;
+  line-height: 0;
+}
+
+.field-name-field-image-with-source {
+  display: none;
+}
+
