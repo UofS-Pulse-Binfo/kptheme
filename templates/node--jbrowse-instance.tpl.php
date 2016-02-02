@@ -82,10 +82,18 @@
 <?php
   // Determine the URL of the JBrowse based on the node properties
   $url = $node->field_jburl['und'][0]['url'];
-  $location = (!empty($node->field_jbloc)) ? $node->field_jbloc['und'][0]['safe_value'] : '';
-  $tracks = (!empty($node->field_jbtracks)) ? $node->field_jbtracks['und'][0]['safe_value'] : '';
+  $query = array();
+  $query['loc'] = (!empty($node->field_jbloc)) ? $node->field_jbloc['und'][0]['safe_value'] : '';
+  $query['tracks'] = (!empty($node->field_jbtracks)) ? $node->field_jbtracks['und'][0]['safe_value'] : '';
 
-  $url = "$url/?q=loc=$location&tracks=$tracks";
+  // Override any node properties based on the URL.
+  foreach ($_GET as $k => $v) {
+    if ($k != 'q') {
+      $query[$k] = $v;
+    }
+  }
+
+  $url = url($url, array('query' => $query));
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
