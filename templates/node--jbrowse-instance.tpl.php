@@ -116,7 +116,7 @@
     </div>
 
     <div id="JBrowseInstance">
-      <iframe src="<?php print $url;?>" width="100%" height="100%">
+      <iframe src="<?php print $url;?>" width="100%" height="100%" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
       </iframe>
     </div>
   </div>
