@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Styling of the Shepherd Site Tours used for tutorials throughout KnowPulse.
+ */
+ 
+div.shepherd-step {
+  /* Fixed width needed to keep steps from expanding based on contents */
+  width: 300px;
+}
+
+/* The drop shadow behind the box outlining the step */
+.shepherd-element.shepherd-theme-arrows .shepherd-content {
+  -webkit-filter: drop-shadow(0 0 5px rgba(49,67,85,0.9));
+}
+
+/* Header */
+.shepherd-element.shepherd-theme-arrows.shepherd-has-title .shepherd-content header {
+  background: #314355;
+  background: rgba(49,67,85);
+  color: #fff;
+}
+
+/* The Cancel Link - default color when there is NO header for the step */
+.shepherd-element.shepherd-theme-arrows .shepherd-content header a.shepherd-cancel-link {
+  color: #000;
+  opacity: 0.5;
+}
+
+/* The Cancel Link - this sets the color when there IS a header for the step */
+.shepherd-element.shepherd-theme-arrows.shepherd-has-title .shepherd-content header a.shepherd-cancel-link {
+  color: #FFF;
+  opacity: 0.5;
+}
+
+/* The Next button */
+.shepherd-element.shepherd-theme-arrows .shepherd-content footer .shepherd-buttons li .shepherd-button {
+  background: #406F18;
+}
+
+/* The Done! button */
+.shepherd-element.shepherd-theme-arrows .shepherd-content footer .shepherd-buttons li .shepherd-button.shepherd-button-complete {
+  background: #314355;
+}
