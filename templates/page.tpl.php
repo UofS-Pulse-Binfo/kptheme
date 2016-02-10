@@ -99,7 +99,6 @@
       <?php print render($page['menu_second']); ?>
     <?php endif; ?>
   </div>
-
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>">
   
   <div class="section clearfix">
@@ -110,6 +109,13 @@
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
       
+    <?php endif; ?>
+    
+    <?php if ($variables['is_front'] === TRUE): ?>
+     <div id="frontpage-start-tour">
+      <div id="frontpage-tour-help">Need Help?</div>
+      <a href="#" id="frontpage-tour-button">Start Tour</a>
+     </div>
     <?php endif; ?>
     
     
