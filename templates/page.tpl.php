@@ -100,25 +100,34 @@
     <?php endif; ?>
   </div>
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>">
-  
+
   <div class="section clearfix">
 
     <?php if ($logo): ?>
-    
+
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
-      
+
     <?php endif; ?>
-    
+
+    <!-- Omnibox Search bar!!! -->
+    <div id="kp-header-search-box">
+      <?php
+        $render_arr = drupal_get_form('tripal_core_search_block');
+        print drupal_render($render_arr);
+      ?>
+    </div>
+
+    <!-- Need help button which is only on the front page -->
     <?php if ($variables['is_front'] === TRUE): ?>
      <div id="frontpage-start-tour">
       <div id="frontpage-tour-help">Need Help?</div>
       <a href="#" id="frontpage-tour-button">Start Tour</a>
      </div>
     <?php endif; ?>
-    
-    
+
+
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan"<?php if ($hide_site_name && $hide_site_slogan) { print ' class="element-invisible"'; } ?>>
 

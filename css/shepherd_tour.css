@@ -2,7 +2,7 @@
  * @file
  * Styling of the Shepherd Site Tours used for tutorials throughout KnowPulse.
  */
- 
+
 div.shepherd-step {
   /* Fixed width needed to keep steps from expanding based on contents */
   width: 300px;
@@ -67,8 +67,9 @@ a.tour-start-link.tour-textual-link {
 
 /** Front start tour button */
 #frontpage-start-tour {
-  float: right;
-  margin: 100px 15px 25px 15px;
+  position: absolute;
+  top: 100px;
+  right: 15px;
   font-family: Verdana;
 }
 #frontpage-start-tour #frontpage-tour-help {
@@ -77,12 +78,12 @@ a.tour-start-link.tour-textual-link {
   font-style: italic;
 
   text-shadow:
-   -1px -1px 0 #142330,  
+   -1px -1px 0 #142330,
     1px -1px 0 #142330,
     -1px 1px 0 #142330,
      1px 1px 0 #142330; /* Border the text */
   text-shadow:
-   -1px -1px 6px #142330,  
+   -1px -1px 6px #142330,
     1px -1px 6px #142330,
     -1px 1px 6px #142330,
      1px 1px 6px #142330; /** And a bit more with blur*/
@@ -95,20 +96,20 @@ a.tour-start-link.tour-textual-link {
   border-radius: 3px;
   cursor: pointer;
   border: 0;
-  
+
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 12px;
   font-weight: 400;
   font-family: Verdana;
-  line-height: 1em;    
+  line-height: 1em;
   color: #3A6A13;
 
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
     box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
- 
+
     -webkit-transition: all 0.15s ease;
     -moz-transition: all 0.15s ease;
     -o-transition: all 0.15s ease;
