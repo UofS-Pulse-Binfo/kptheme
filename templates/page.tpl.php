@@ -111,7 +111,7 @@
 
     <?php endif; ?>
 
-    <!-- Omnibox Search bar!!! -->
+    <!-- Omnibox Search bar!!!  -->
     <div id="kp-header-search-box">
       <?php
         $render_arr = drupal_get_form('tripal_core_search_block');

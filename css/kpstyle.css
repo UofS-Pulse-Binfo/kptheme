@@ -446,7 +446,91 @@ table {
   font-family: inherit;
 }
 
-/* related species */
+/***
+ * Teasers
+ */
+
+/* Search */
+.search-results .tripal-teaser {
+  border: 0;
+  padding: 0;
+  margin: 0 0 30px 0px;
+  background-color: transparent;
+}
+
+.search-results .tripal-teaser .tripal-teaser-title {
+  border-bottom: 0;
+  font-weight: normal;
+}
+
+.search-results .tripal-teaser table tr td {
+  border-right: 0;
+  border-left: 0;
+}
+
+.search-results .tripal-teaser table tr th {
+  background-color: #FFF;
+  border: 1px solid #FFF;
+  color: #314355;
+}
+
+.search-results .tripal-teaser table tr.even td, .search-results .tripal-teaser .tripal-site-admin-only-table-row {
+  background: #FFF;
+}
+
+.search-results .node-teaser {
+  border-bottom: 0;
+}
+
+.search-results .node-teaser h2 a {
+  color: #118324;
+}
+
+.search-results .tripal-teaser-image img {
+  display: none;
+}
+.search-results .tripal-teaser-image.col-left-img {
+  width: 0;
+}
+.search-results .tripal-teaser .col-right-copy {
+  padding-left: 0;
+}
+
+/* Hide the read-more link. */
+.search-results ul.links.inline li {
+  display: none;
+}
+
+/* Teaser data display */
+.teaser-items {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.teaser-items .item {
+  width: 24%;
+  text-align: left;
+}
+.teaser-items .item .item-title {
+  font-weight: bolder;
+}
+
+/* Publications */
+.tripal_pub-teaser .tripal-teaser-title {
+  margin-bottom: 2px;
+  clear: none;
+}
+.tripal_pub-teaser .pyear {
+  float: right;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.tripal_pub-teaser .citation {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Related Species on node pages */
 
 div.tripal_organism-teaser,
 div.tripal-teaser {
@@ -461,12 +545,16 @@ div.tripal-teaser {
   width: 220px;
   overflow: hidden;
   text-align: center;
+  padding-top: 20px;
 }
 
 .col-right-copy {
   float: none;
   width: auto;
   padding-left: 250px;
+}
+.col-right-copy .tripal-teaser-title {
+  clear: none;
 }
 
 .col-clear {
