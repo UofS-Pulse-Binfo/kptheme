@@ -7,6 +7,8 @@
  * Header
  */
 #header {
+  height: 115px;
+
   background-image:url("../images/banner.jpg");
   background-repeat: repeat-x;
   border-bottom: 2px solid black;
@@ -17,6 +19,9 @@
 
 #header img {
   border: none;
+
+  height: 87px;
+  width: 309px;
 }
 
 #site-name {
