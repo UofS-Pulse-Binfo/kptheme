@@ -24,6 +24,11 @@
   width: 309px;
 }
 
+/* Fix logo alignment */
+#header .section, #header .clearfix {
+  clear: both;
+} 
+
 #site-name {
   font-size: 6em;
     text-shadow:
@@ -107,6 +112,7 @@ div.menu-main li {
   float: left;
 }
 
+/** First Menu **/
 div.menu-first {
   display:block;
   height:31px;
@@ -146,7 +152,7 @@ div.menu-first a:hover {
   color: #FFFFFF;
 }
 
-
+/** Second Menu **/
 div.menu-second {
   display:block;
   height:42px;
@@ -170,25 +176,6 @@ div.menu-second ul {
   margin-left:15px;
 }
 
-/* original version of
-secondary navigation
-
-div.menu-second a {
-  color: #474747;
-  font-size: 13px;
-  font-family:Arial, Helvetica, sans-serif;
-  line-height:38px;
-  float: left;
-  font-weight:normal;
-  letter-spacing: 1px;
-  padding: 2px 25px 2px 10px;
-  display:block;
-  height: 43px;
-  background: url('../images/subdivider.png') no-repeat 100% 21px;
-}
-*/
-
-/* change secondary navigation size */
 div.menu-second a {
   color: #474747;
   font-size: 1.18em;
@@ -219,13 +206,6 @@ div.menu-second  a:hover {
   color: #000000;
   text-shadow: 1px 1px 10px #000000;
 }
-
-/* original version
-div.menu-second  a:hover, a:active {
-  color: #212C32;
-  text-decoration: underline;
-}
-*/
 
 /**
  * Tables
@@ -262,6 +242,10 @@ table tr.even {
   background: #FBFBFB;
 }
 
+table {
+  font-family: inherit;
+} 
+
 /**
  * Forms
  */
@@ -295,9 +279,10 @@ img {
   margin: 0;
 }
 
-/* bio informatics page
-and research page
-*/
+/**
+ * Bioinformatics & Research page
+ * @todo this shouldn't be in the main theme.
+ */
 .copy-center-row img {
   border: none;
   padding-right: 30px;
@@ -311,12 +296,6 @@ and research page
 .row-bottom {
   margin-bottom: 20px;
 }
-
-/* fix logo alignment */
-#header .section, #header .clearfix {
-  clear: both;
-}
-
 
 /* make all boxes the same
 heights in bioinformatics
@@ -352,14 +331,20 @@ research flex style value */
   margin: 25px 0 0 0;
 }
 
-/* crops font style */
+/**
+ * Crops font style 
+ * @todo this shouldn't be in main theme.
+ */
 .tripal-contents-table {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.95em;
 }
 
-/* breeding and genetics and crops
-overview page */
+/** 
+ * Breeding and genetics
+ * & crops overview page 
+ * @todo this shouldn't be in main theme.
+ */
 
 div.field-items p {
   text-align: justify;
@@ -375,19 +360,27 @@ div.field-items p {
   text-align: justify;
 }
 
-/* sort icon in raw sequence search */
+/**
+ * sort icon in raw sequence search
+ * @todo shouldn't be in main theme.
+ */
 .active img {
   border: none;
   margin: 0 0 0 10px;
   padding: 0;
 }
 
-/* blast page */
+/**
+ * blast page 
+ * @todo Shouldn't be in main theme
+ */
 #edit-msg p {
   text-align: justify;
 }
 
-/* footer */
+/**
+ * Footer 
+ */
 #footer {
   border: none;
   color: #FFFFFF;
@@ -461,12 +454,7 @@ img.kp-logo-footer {
   margin-left: 7px;
 }
 
-/* fields in table */
-table {
-  font-family: inherit;
-}
-
-/***
+/**
  * Teasers
  */
 
