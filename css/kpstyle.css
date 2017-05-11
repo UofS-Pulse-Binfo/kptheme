@@ -3,6 +3,10 @@
   display: none;
 }
 
+a, a:active, a:hover, a:focus {
+  color: #227f22;
+}
+
 /**
  * Header
  */
@@ -626,4 +630,47 @@ div.tripal-teaser {
 
 .admin-list dd {
   margin-bottom: 20px;
+}
+
+/**
+ * Tripal Content Type tweaks.
+ * @todo move into it's own file.
+ */
+
+/* TABLE OF CONTENTS. */
+.field-name-toc {
+  border: 1px solid #d0d0d0;
+  padding: 15px 20px;
+}
+.field-name-toc .field-label {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 5px;
+  margin: 0 0 0.5em;
+  font-weight: normal;
+  font-size: 1.071em;
+  line-height: 1.2;
+}
+.view-tripal-content-type-toc .views-row {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* TRIPAL PANES. */
+.tripal_pane {
+  border: 0;
+}
+.tripal_pane > span {
+  background: #FFF;
+  border: 0;
+  border-bottom: 1px solid #d0d0d0;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #314355;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+#tripal-pane-close-button {
+  color: #a4a5a4;
 }
