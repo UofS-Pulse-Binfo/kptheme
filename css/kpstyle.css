@@ -4,7 +4,11 @@
 }
 
 a, a:active, a:hover, a:focus {
-  color: #227f22;
+  color: #3a7f21;
+}
+
+ul.tabs.primary {
+  display: none;
 }
 
 /**
@@ -12,7 +16,7 @@ a, a:active, a:hover, a:focus {
  */
 #header {
   height: 115px;
-
+  background-color: #3a7f21;
   background-image:url("../images/banner.jpg");
   background-repeat: repeat-x;
   border-bottom: 2px solid black;
@@ -214,29 +218,22 @@ div.menu-second  a:hover {
 /**
  * Tables
  */
+table {
+  border: 2px solid #FBFBFB;
+}
 table tr th {
   background-color: #314355;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #FBFBFB;
 }
 table tr td {
-  border-right: 1px solid #d0d0d0;
-  border-left: 1px solid #d0d0d0;
+  border-right: 1px solid #FBFBFB;
+  border-left: 1px solid #FBFBFB;
 }
-table tr.views-row-last td {
-  border-bottom: 1px solid #d0d0d0;
+.tripal-pane table tbody tr:first-child td {
+  border-top: 1px solid #FBFBFB;
 }
-
-.tripal-data-block table tr.first td {
-  border-top: 1px solid #d0d0d0;
-}
-.tripal-data-block table tr:first-child td {
-  border-top: 1px solid #d0d0d0;
-}
-.tripal-data-block table tr.last td {
-  border-bottom: 1px solid #d0d0d0;
-}
-.tripal-data-block table tr:last-child td {
-  border-bottom: 1px solid #d0d0d0;
+.tripal-pane table tbody tr:last-child td {
+  border-bottom: 1px solid #FBFBFB;
 }
 
 table tr.odd {
@@ -394,7 +391,7 @@ div.field-items p {
 }
 
 #footer-wrapper {
-  border-bottom: 15px solid #284453;
+  border-bottom: 0; 
 }
 
 #footer .content {
@@ -636,6 +633,11 @@ div.tripal-teaser {
  * Tripal Content Type tweaks.
  * @todo move into it's own file.
  */
+
+h1#page-title {
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 30px;
+}
 
 /* TABLE OF CONTENTS. */
 .field-name-toc {
