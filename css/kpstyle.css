@@ -37,6 +37,11 @@ body {
   background: #161617;
 }
 
+.sidebar .block {
+  background-color: #ffffff;
+  border-color: #d0d0d0;
+}
+
 /**
  * Search box in header
  */
@@ -48,6 +53,10 @@ body {
 
 #kp-header-search-box input.form-text {
   width: 200px;
+}
+
+#kp-header-search-box #search-form .form-item-keys label {
+  visibility: hidden;
 }
 
 /**
