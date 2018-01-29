@@ -68,8 +68,8 @@ a.tour-start-link.tour-textual-link {
 /** Front start tour button */
 #frontpage-start-tour {
   position: absolute;
-  top: 95px;
-  right: 5px;
+  top: 70px;
+  right: 128px;
   font-family: Verdana;
 }
 #frontpage-start-tour #frontpage-tour-help {
@@ -92,7 +92,7 @@ a.tour-start-link.tour-textual-link {
 
   padding: 8px 0;
   width: 125px;
-  display:block;
+  display: inline-block;
   border-radius: 3px;
   cursor: pointer;
   border: 0;

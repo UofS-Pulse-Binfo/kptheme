@@ -12,19 +12,6 @@
  */
 ?>
 <div id="page-wrapper"><div id="page">
-  <!-- First Menu
-  <div class="menu-first menu-main">
-    <?php if ($page['menu_first']): ?>
-      <?php print render($page['menu_first']); ?>
-    <?php endif; ?>
-  </div> -->
-
-  <!-- Second Menu
-  <div class="menu-second menu-main">
-    <?php if ($page['menu_second']): ?>
-      <?php print render($page['menu_second']); ?>
-    <?php endif; ?>
-  </div> -->
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>">
 
@@ -52,7 +39,7 @@
       <div id="frontpage-tour-help">Need Help?</div>
       <a href="#" id="frontpage-tour-button">Start Tour</a>
      </div>
-    <?php endif; ?> -->
+    <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan"<?php if ($hide_site_name && $hide_site_slogan) { print ' class="element-invisible"'; } ?>>

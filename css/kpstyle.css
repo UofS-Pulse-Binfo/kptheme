@@ -64,6 +64,10 @@ body {
   right: 15px;
 }
 
+#kp-header-search-box form.search-form {
+  margin: 0;
+}
+
 #kp-header-search-box input.form-text {
   width: 200px;
 }
