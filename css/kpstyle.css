@@ -7,10 +7,6 @@ a, a:active, a:hover, a:focus {
   color: #3a7f21;
 }
 
-ul.tabs.primary {
-  display: none;
-}
-
 /**
  * Header
  */
@@ -633,17 +629,43 @@ div.tripal-teaser {
  * @todo move into it's own file.
  */
 
-h1#page-title {
+.page-bio-data h1#page-title {
   border-bottom: 1px solid #d0d0d0;
   margin-bottom: 30px;
 }
 
+.page-bio-data .ds-left {
+  width: 25%;
+}
+.page-bio-data .ds-right {
+  width: 72%;
+} 
+
+/* EDIT/VIEW TABS */
+.page-bio-data .tabs ul.primary {
+  background: none;
+}
+.page-bio-data .tabs ul.primary li {
+  float: right;
+}
+.page-bio-data .tabs ul.primary li.active a {
+  border: 0;
+  color: #314355;
+  font-weight: bold;
+}
+.page-bio-data .tabs ul.primary li a {
+  border: 0;
+  color: #9E9E9E;
+  font-weight: bold;
+  background-color: #FFF;
+}
+
 /* TABLE OF CONTENTS. */
-.field-name-toc {
+.page-bio-data .field-name-toc {
   border: 1px solid #d0d0d0;
   padding: 15px 20px;
 }
-.field-name-toc .field-label {
+.page-bio-data .field-name-toc .field-label {
   border-bottom: 1px solid #d0d0d0;
   padding-bottom: 5px;
   margin: 0 0 0.5em;
@@ -651,17 +673,17 @@ h1#page-title {
   font-size: 1.071em;
   line-height: 1.2;
 }
-.view-tripal-content-type-toc .views-row {
+.page-bio-data .view-tripal-content-type-toc .views-row {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
 /* TRIPAL PANES. */
-.tripal_pane {
+.page-bio-data .tripal_pane {
   border: 0;
 }
-.tripal_pane > span {
+.page-bio-data .tripal_pane > span {
   background: #FFF;
   border: 0;
   border-bottom: 1px solid #d0d0d0;
@@ -672,6 +694,13 @@ h1#page-title {
   line-height: 1.2;
   margin-bottom: 15px;
 }
-#tripal-pane-close-button {
+.page-bio-data #tripal-pane-close-button {
   color: #a4a5a4;
+}
+.tripal_pane-fieldset-buttons .fa-times-rectangle-o::before, 
+  .tripal_pane-fieldset-buttons .fa-window-close-o::before {
+    content: "x";
+}
+.tripal_pane-fieldset-buttons .fa-lg {
+  vertical-align: 0;
 }
