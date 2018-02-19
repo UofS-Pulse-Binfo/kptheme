@@ -631,7 +631,7 @@ div.tripal-teaser {
 
 .page-bio-data h1#page-title {
   border-bottom: 1px solid #d0d0d0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .page-bio-data .ds-left {
@@ -642,6 +642,11 @@ div.tripal-teaser {
 } 
 
 /* EDIT/VIEW TABS */
+.page-bio-data .tabs {
+  margin-bottom: 0;
+  position: relative;
+  top: -15px;
+}
 .page-bio-data .tabs ul.primary {
   background: none;
 }
@@ -703,4 +708,27 @@ div.tripal-teaser {
 }
 .tripal_pane-fieldset-buttons .fa-lg {
   vertical-align: 0;
+}
+
+/* TABLE */
+.page-bio-data table caption {
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+.page-bio-data tr, .page-bio-data tr.even {
+  background: none;
+}
+
+/* ORGANISM */
+.field-name-data--image {
+  position: relative;
+  top: 23px;
+  float: right;
+}
+.field-name-data--image img {
+  height: 380px;
+  width: 250px;
+}
+.group-summary-table table {
+  width: auto;
 }
