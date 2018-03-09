@@ -31,7 +31,7 @@ a, a:active, a:hover, a:focus {
 /* Fix logo alignment */
 #header .section, #header .clearfix {
   clear: both;
-} 
+}
 
 #site-name {
   font-size: 6em;
@@ -245,7 +245,7 @@ table tr.even {
 
 table {
   font-family: inherit;
-} 
+}
 
 /**
  * Forms
@@ -333,7 +333,7 @@ research flex style value */
 }
 
 /**
- * Crops font style 
+ * Crops font style
  * @todo this shouldn't be in main theme.
  */
 .tripal-contents-table {
@@ -341,9 +341,9 @@ research flex style value */
   font-size: 0.95em;
 }
 
-/** 
+/**
  * Breeding and genetics
- * & crops overview page 
+ * & crops overview page
  * @todo this shouldn't be in main theme.
  */
 
@@ -372,7 +372,7 @@ div.field-items p {
 }
 
 /**
- * blast page 
+ * blast page
  * @todo Shouldn't be in main theme
  */
 #edit-msg p {
@@ -380,7 +380,7 @@ div.field-items p {
 }
 
 /**
- * Footer 
+ * Footer
  */
 
 #footer-wrapper {
@@ -639,7 +639,11 @@ div.tripal-teaser {
 }
 .page-bio-data .ds-right {
   width: 72%;
-} 
+}
+
+.page-bio-data .tripald3-legend {
+  font-style: normal;
+}
 
 /* EDIT/VIEW TABS */
 .page-bio-data .tabs {
@@ -702,7 +706,7 @@ div.tripal-teaser {
 .page-bio-data #tripal-pane-close-button {
   color: #a4a5a4;
 }
-.tripal_pane-fieldset-buttons .fa-times-rectangle-o::before, 
+.tripal_pane-fieldset-buttons .fa-times-rectangle-o::before,
   .tripal_pane-fieldset-buttons .fa-window-close-o::before {
     content: "x";
 }
@@ -711,16 +715,30 @@ div.tripal-teaser {
 }
 
 /* TABLE */
-.page-bio-data table caption {
+.page-bio-data table caption, .page-bio-data table caption .tripald3-title {
   font-weight: bolder;
+  font-style: normal;
   font-size: 14px;
 }
 .page-bio-data tr, .page-bio-data tr.even {
   background: none;
 }
+.page-bio-data table caption .tripald3-desc {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12.6px;
+}
+.page-bio-data table tbody th {
+  width: 150px;
+}
+.page-bio-data .trpfancy-table-footer {
+  position: relative;
+  top: -10px;
+  margin-bottom: 10px;
+}
 
 /* FIELDS */
-.page-bio-data .field-label {
+.page-bio-data div.field-label {
   font-weight: bolder;
   font-size: 14px;
   margin-top: 15px;
