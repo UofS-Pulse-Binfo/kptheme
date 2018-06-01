@@ -1,4 +1,19 @@
 <?php
+
+/**
+ * Preprocessor: Tripal Content Entity pages
+ *
+function kptheme_preprocess(&$vars) {
+  if (isset($vars['elements']['#entity_type']) AND ($vars['elements']['#entity_type'] == 'TripalEntity')) {
+
+    drupal_add_js('
+      jQuery(document).ready(function () {
+        $(".field-group-tripalpane").not(":has(.field)").remove();
+    });', 'inline');
+
+  }
+}*/
+
 /**
  * Implements hook_preprocess_views_view().
  * Add a collapsible fieldset around the views exposed filters

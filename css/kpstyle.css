@@ -763,10 +763,19 @@ div.tripal-teaser {
   margin-top: 15px;
 }
 
-/* ORGANISM */
-.page-bio-data .tripal_pane-fieldset-gp_overview {
-  min-height: 420px;
+.page-bio-data .field-type-local--quick-search {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d0d0d0;
+  background-color: #F1F1F1;
+  width: 500px;
 }
+.page-bio-data .field-type-local--quick-search input.form-text {
+  width: 350px;
+}
+
+/* ORGANISM */
 .page-bio-data .field-name-data--image {
   position: relative;
   top: 23px;
@@ -775,6 +784,10 @@ div.tripal-teaser {
 .page-bio-data .field-name-data--image img {
   height: 380px;
   width: 250px;
+}
+.page-bio-data .tripal_pane-fieldset-gp_description {
+  clear: both;
+  padding-top: 25px;
 }
 .page-bio-data .group-summary-table table {
   width: auto;
