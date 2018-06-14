@@ -763,17 +763,37 @@ div.tripal-teaser {
   margin-top: 15px;
 }
 
+/* --- Quick Search */
 .page-bio-data .field-type-local--quick-search {
-  padding-left: 20px;
+  padding: 5px 20px 15px 25px;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid #d0d0d0;
-  background-color: #F1F1F1;
-  width: 500px;
+  background-color: #F9F9F9;
 }
-.page-bio-data .field-type-local--quick-search input.form-text {
-  width: 350px;
+/*
+.page-bio-data .field-type-local--quick-search div.field-label {
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 10px;
+  width: 250px;
 }
+*/
+
+/* --- Quick Browse */
+.page-bio-data .field-type-local--quick-browse {
+  padding: 5px 20px 15px 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d0d0d0;
+  background-color: #F9F9F9;
+}
+/*
+.page-bio-data .field-type-local--quick-browse div.field-label {
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 10px;
+  width: 250px;
+}
+*/
 
 /* ORGANISM */
 .page-bio-data .field-name-data--image {
