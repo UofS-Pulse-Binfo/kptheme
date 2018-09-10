@@ -808,3 +808,20 @@ div.tripal-teaser {
   float: left;
   margin-right: 25px;
 }
+
+/* PUBLICATION */
+.page-bio-data .tripalentity-bio-data-6 .field-name-tpub--citation {
+  border: 1px solid #ccffb3;
+  border-left-width: 15px;
+  background-color: #eeffe6;
+  padding: 10px 20px;
+}
+/* For adding a quote symbol. Needs work.
+.page-bio-data .tripalentity-bio-data-6 .field-name-tpub--citation .field-items ::before {
+  content: '\201c';
+  font-size: 50px;
+  color: lightgray;
+  position: relative;
+  top: 25px;
+}
+*/
