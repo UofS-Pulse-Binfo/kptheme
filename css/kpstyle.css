@@ -276,6 +276,24 @@ fieldset legend .fieldset-legend {
   text-shadow: none;
 }
 
+/* Fieldsets on Tripal3 Pages */
+
+.entity-tripalentity fieldset legend {
+  background-color: white;
+}
+.entity-tripalentity fieldset legend a.fieldset-title {
+  color: #3b3b3b;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.entity-tripalentity fieldset legend .fieldset-legend {
+  color: #3b3b3b;
+  font-weight: bold;
+}
+.entity-tripalentity fieldset.collapsed legend {
+  border: none;
+}
+
 /**
  * Fields
  */
