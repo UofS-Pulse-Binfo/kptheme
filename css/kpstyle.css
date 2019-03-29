@@ -763,6 +763,10 @@ div.tripal-teaser {
   margin-top: 15px;
 }
 
+.page-bio-data .field-name-schema--name {
+  display: none;
+}
+
 /* --- Quick Search */
 .page-bio-data .field-type-local--quick-search {
   padding: 5px 20px 15px 25px;
@@ -845,3 +849,4 @@ div.tripal-teaser {
   top: 25px;
 }
 */
+
