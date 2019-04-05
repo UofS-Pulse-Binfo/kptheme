@@ -25,14 +25,6 @@
 
     <?php endif; ?>
 
-    <!-- Omnibox Search bar!!! -->
-    <div id="kp-header-search-box">
-      <?php
-        $render_arr = drupal_get_form('search_form');
-        print drupal_render($render_arr);
-      ?>
-    </div>
-
     <!-- Need help button which is only on the front page
     <?php if ($variables['is_front'] === TRUE): ?>
      <div id="frontpage-start-tour">
