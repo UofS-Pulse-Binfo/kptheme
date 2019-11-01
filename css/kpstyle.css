@@ -11,21 +11,22 @@ a, a:active, a:hover, a:focus {
  * Header
  */
 #header {
-  height: 115px;
+  height: 93px;
   background-color: #3a7f21;
-  background-image:url("../images/banner.jpg");
+  background-image:url("../images/banner-subpage.jpg");
   background-repeat: repeat-x;
+  /*
   border-bottom: 2px solid black;
   -webkit-box-shadow: 0 4px 4px #000000;
      -moz-box-shadow: 0 4px 4px #000000;
-          box-shadow: 0 4px 4px #000000;
+          box-shadow: 0 4px 4px #000000; */
 }
 
 #header img {
   border: none;
 
-  height: 87px;
-  width: 309px;
+  height: 65px;
+  width: 245px;
 }
 
 /* Fix logo alignment */
@@ -867,4 +868,3 @@ div.tripal-teaser {
   top: 25px;
 }
 */
-
