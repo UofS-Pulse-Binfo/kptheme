@@ -10,24 +10,26 @@ a, a:active, a:hover, a:focus {
 /* /////// HIGHLIGHT */
 #highlighted {
   background-color: #FDFFD6;
-  border-bottom: 2px solid #FF0000 !important;
+  border-bottom: 2px solid #FF0000;
   color: #000000;
   font-family: sans-serif;
-  font-size: 1.0em;
+  font-weight: 300;
 }
 
-  #highlighted-content-sub-page {
-    margin: 0 10px;
+  #higlighted-content-sub-page {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin: 0 20px;
     padding: 8px 0;
-    width: 1280px;
+    width: 100%;
   }
 
-  #highlighted-content-sub-page > span {
-    color: #FF0000;
-    font-weight: bold;
+  #higlighted-content-sub-page p,
+  #higlighted-content-sub-page h2,
+  #higlighted-content-sub-page div {
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    border: none;
   }
 
 /**
