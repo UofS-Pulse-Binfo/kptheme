@@ -15,7 +15,7 @@
 
  <?php if ($page['highlighted'] || $_SERVER['HTTP_HOST'] == 'localhost') { ?>
   <div id="highlighted">
-    <div><?php print ($_SERVER['HTTP_HOST'] == 'localhost') ? '<span>This is a clone of KnowPulse</span>' : render($page['highlighted']); ?></div>
+    <div id="highlighted-content-sub-page"><?php print ($_SERVER['HTTP_HOST'] == 'localhost') ? '<span>This is a clone of KnowPulse</span>' : render($page['highlighted']); ?></div>
   </div>
  <?php } ?>
 
@@ -96,7 +96,6 @@
     <?php endif; ?>
 
     <div id="content" class="column"><div class="section">
-      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
