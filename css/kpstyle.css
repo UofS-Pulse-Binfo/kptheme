@@ -7,6 +7,29 @@ a, a:active, a:hover, a:focus {
   color: #3a7f21;
 }
 
+/* /////// HIGHLIGHT */
+#highlighted {
+  background-color: #FDFFD6;
+  border-bottom: 2px solid #FF0000 !important;
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 1.0em;
+}
+
+  #highlighted > div {
+    margin: 0 10px;
+    padding: 8px 0;
+    width: 1280px;
+  }
+
+  #highlighted div > span {
+    color: #FF0000;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
 /**
  * Header
  */

@@ -11,7 +11,15 @@
  * @see https://api.drupal.org/api/drupal/themes%21bartik%21templates%21page.tpl.php/7.x
  */
 ?>
-<div id="page-wrapper"><div id="page">
+<div id="page-wrapper">
+
+ <?php if ($page['highlighted'] || $_SERVER['HTTP_HOST'] == 'localhost') { ?>
+  <div id="highlighted">
+    <div><?php print ($_SERVER['HTTP_HOST'] == 'localhost') ? '<span>This is a clone of KnowPulse</span>' : render($page['highlighted']); ?></div>
+  </div>
+ <?php } ?>
+
+  <div id="page">
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>">
 
