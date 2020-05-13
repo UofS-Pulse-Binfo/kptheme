@@ -334,7 +334,11 @@ fieldset legend .fieldset-legend {
 /** All Images */
 img {
   border: 1px solid #d0d0d0;
-  margin: 0;
+  margin: 0px 15px;
+}
+
+.field-name-field-funding-organization-logos img {
+  border: none;
 }
 
 /**
