@@ -309,3 +309,14 @@ ul.professors .professor-name {
   font-weight: bold;
 /*  padding-top: 15px;*/
 }
+
+/**
+ * Assembly Pages
+ */
+.tripalentity-bio-data-33 .field-type-schema--publication .field-item {
+  background: #f7f7f7;
+  border-top: 1px solid #bbb;
+  font-style: italic;
+  padding: 0.5em 10px;
+}
+
