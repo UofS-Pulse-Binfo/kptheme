@@ -862,7 +862,7 @@ div.tripal-teaser {
   padding-top: 25px;
 }
 .page-bio-data .group-summary-table table {
-  width: 100%;
+  width: auto;
 }
 .page-bio-data .field-name-ncit--principal-investigator ul {
   margin: 0;
