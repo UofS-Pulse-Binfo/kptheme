@@ -27,7 +27,7 @@ function kptheme_preprocess_table(&$vars) {
   // In crops page, arg1 is the species.
   $arg1 = strstr($path_alias, '/', TRUE);
   // Species: 
-  $species = array('Cicer', 'Glycine', 'Lens', 'Medicago', 'Phaseoulus', 'Pisum', 'Vicia');
+  $species = array('Cicer', 'Glycine', 'Lens', 'Medicago', 'Phaseolus', 'Pisum', 'Vicia');
   
   // Apply inline style when arg1 (in path alias) is matching one
   // of the species.
