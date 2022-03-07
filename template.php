@@ -15,6 +15,28 @@ function kptheme_preprocess(&$vars) {
 }*/
 
 /**
+ * Implements hook_preprocess_table().
+ * 
+ * Apply an inline style to crops pages only, particularly the
+ * crops summary overview table. This style rule along with the rule
+ * applied to crop image render both table and image side by side.
+ */
+function kptheme_preprocess_table(&$vars) {
+  // Get current path.
+  $path_alias = drupal_get_path_alias();
+  // In crops page, arg1 is the species.
+  $arg1 = strstr($path_alias, '/', TRUE);
+  // Species: 
+  $species = array('Cicer', 'Glycine', 'Lens', 'Medicago', 'Phaseoulus', 'Pisum', 'Vicia');
+  
+  // Apply inline style when arg1 (in path alias) is matching one
+  // of the species.
+  if ($arg1 && in_array(ucfirst(strtolower($arg1)), $species)) {
+    $vars['attributes']['style'][] = 'width: auto';
+  }
+}
+
+/**
  * Implements hook_preprocess_views_view().
  * Add a collapsible fieldset around the views exposed filters
  */ 
