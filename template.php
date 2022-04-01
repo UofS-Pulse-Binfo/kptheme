@@ -37,33 +37,6 @@ function kptheme_preprocess_table(&$vars) {
 }
 
 /**
- * Implements hook_preprocess_field().
- * 
- * Disable a class that main template uses to disable name field
- * thereby allowing the field name to appear in the layout for 
- * specific content types.
- */
-function kptheme_preprocess_field(&$vars) {
-  // Get current path.
-  $path_alias = drupal_get_path_alias();
-  // In crops page, arg1 is the species.
-  $arg1 = strstr($path_alias, '/', TRUE);
-  // content types where name is not required.
-  $content_types = array('germplasm', 'genome-assembly', 'researcharea', 'lentiltraits', 'publication', 'f2', 'study', 'genetic-marker', 'geneticmap');
-  
-  // If current page is not in the list of content types where name is
-  // supposed to be disabled, disable the class (show field name).
-  if ($arg1 && !in_array(strtolower($arg1), $content_types) && $vars['element']['#field_name'] == 'schema__name') {
-    foreach($vars['classes_array'] as $i => $field_class) {
-      if ($field_class == 'field-name-schema--name') {
-        unset($vars['classes_array'][ $i ]);
-        break;
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_preprocess_views_view().
  * Add a collapsible fieldset around the views exposed filters
  */ 
