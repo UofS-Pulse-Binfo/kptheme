@@ -811,7 +811,33 @@ div.tripal-teaser {
   margin-top: 15px;
 }
 
-.page-bio-data .field-name-schema--name {
+/* Content Types where Name field is not displayed:
+  DB identifier / Content Type
+  bio_data_6 Publication
+  bio_data_11 Study
+  bio_data_14 Genetic Map
+  bio_data_18 Genetic marker
+  bio_data_20 Germplasm Accession
+  bio_data_21 F1 (Breeding Crosses)
+  bio_data_22 Cultivar
+  bio_data_28 Lentil Traits
+  bio_data_29 RIL
+  bio_data_30 F2 (e.g. RIL Individual)
+  bio_data_33 Genome Assembly
+  bio_data_39 Research area
+*/
+.tripalentity-bio-data-6 .field-name-schema--name,
+.tripalentity-bio-data-11 .field-name-schema--name,
+.tripalentity-bio-data-14 .field-name-schema--name,
+.tripalentity-bio-data-18 .field-name-schema--name,
+.tripalentity-bio-data-20 .field-name-schema--name,
+.tripalentity-bio-data-21 .field-name-schema--name,
+.tripalentity-bio-data-22 .field-name-schema--name,
+.tripalentity-bio-data-28 .field-name-schema--name,
+.tripalentity-bio-data-29 .field-name-schema--name,
+.tripalentity-bio-data-30 .field-name-schema--name,
+.tripalentity-bio-data-33 .field-name-schema--name,
+.tripalentity-bio-data-39 .field-name-schema--name {
   display: none;
 }
 
